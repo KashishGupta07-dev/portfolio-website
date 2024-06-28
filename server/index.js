@@ -11,7 +11,7 @@ const authRoutes = require("./routes/auth");
 const projectRoutes = require("./routes/project");
 const contactUs = require("./routes/contactUs");
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"https://kashish-gupta-portfolio-website.vercel.app",
     credentials:true,
 }));
 app.use(express.json());
