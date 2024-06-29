@@ -17,9 +17,9 @@ const otpSchema = new mongoose.Schema({
     }
 });
 
-otpSchema.pre("save",async function(next){
+otpSchema.post("save",async function(doc,next){
     try{
-    await mailSender(this.email,"Verification Mail From Portfolio Website - Developed By Kashish Gupta",`Your Verification Otp is : ${this.otp}`);
+    await mailSender(doc.email,"Verification Mail From Portfolio Website - Developed By Kashish Gupta",`Your Verification Otp is : ${doc.otp}`);
     next();
     }
     catch(error){
