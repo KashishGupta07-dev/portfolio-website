@@ -20,7 +20,7 @@ export const getAllProjectsApi = (setProjects, setLoading) => {
     } catch (error) {
       console.log("Error in getting all projects : ", error);
       toast.error(error?.response?.data?.message);
-    }
+    } 
     toast.remove(toastId);
     setLoading(false);
   };

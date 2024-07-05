@@ -76,8 +76,8 @@ export const Skills = () => {
     ] 
   return (
     <div id='Skills' className='w-full h-full bg-white'>
-        <motion.div whileInView={{ opacity:1,y:[80,0]}} transition={{duration:0.6,easings:"cubic-bezier(0.34, 1.56, 0.64, 1)"}}  className='flex flex-col pt-16 w-2/3 mx-auto items-center font-dmsans'>
-            <div className='text-5xl font-bold'>Skills</div>
+        <motion.div whileInView={{ opacity:1,y:[80,0]}} transition={{duration:0.6,easings:"cubic-bezier(0.34, 1.56, 0.64, 1)"}}  className='flex flex-col pt-16 w-[93%] sm:w-2/3 mx-auto items-center font-dmsans'>
+            <div className='text-4xl md:text-5xl font-bold'>Skills</div>
             <div className=' flex flex-row flex-wrap gap-x-8 gap-y-6 justify-center mt-8 cursor-default'>
                 {
                     allISkills?.map((skill,index)=>(

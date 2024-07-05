@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { editProfileApi } from '../../services/operations/auth';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 export const EditProfile = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -23,13 +24,26 @@ export const EditProfile = () => {
           lastName:""
         })
     }
+    const sideLinks = [
+      {
+        title:"Dashboard",
+        path:"/admin/dashboard/project-dashboard"
+      },{
+        title:"Edit Profile",
+        path:"/admin/dashboard/edit-profile"
+      },
+      {
+        title:"Messages",
+        path:"/admin/dashboard/contact-message"
+      }
+    ]
   return (
     <div className='bg-[#EDF2F8] min-h-screen'>
     <motion.div  whileInView={{y:[100,0],opacity:[0,1]}} transition={{duration:0.8,ease:"backInOut"}}  className='pt-20 w-11/12 mx-auto'>
-        <div className='flex flex-row'>
-    <img src={editImg} alt='edit' className='w-[45%] object-cover'/>
-    <form className='w-[45%] mx-auto mt-16 flex flex-col gap-y-8 font-vietnam' onSubmit={handleSubmit(submitHandler)}>
-      <div className='mb-8 text-5xl font-dmsans font-bold'>{"🫡"}<span className="text-caribbeangreen-300">Edit Profile</span> {" Page"}</div>
+        <div className='flex flex-col lg:flex-row'>
+    <img src={editImg} alt='edit' className='self-center w-full lg:w-[45%] h-fit max-h-[550px] object-contain'/>
+    <form className='lg:w-[45%] mx-auto mt-16 flex flex-col gap-y-8 font-vietnam' onSubmit={handleSubmit(submitHandler)}>
+      <div className='mb-8 text-4xl text-center sm:text-5xl font-dmsans font-bold'>{"🫡"}<span className="text-caribbeangreen-300">Edit Profile</span> {" Page"}</div>
           <div className='flex flex-col w-full'>
           <div>First Name: </div>
           <input type="text" placeholder='Please Enter Your First Name....' name='firstName'  className=' h-[40px] placeholder:font-inter placeholder:font-normal w-full rounded-lg px-4 py-7 outline-none'
@@ -63,6 +77,22 @@ export const EditProfile = () => {
       </form>
     </div>
         </motion.div>
+        <div className="block md:hidden py-5 mt-5 bg-white bg-opacity-35 backdrop-blur-sm">
+        <div className='flex flex-row gap-x-10 mx-auto justify-center'>
+          {
+            sideLinks.map((link,index)=>(
+            <Link
+            to={link.path}
+            className="uppercase gap-y-[1px] cursor-pointer text-xs flex flex-col items-center w-fit text-richblack-400 font-medium font-inter group transition-all duration-100"
+            key={index} 
+            >
+              <div className='w-[5px] h-[5px] bg-[#313bac] rounded-full opacity-0 group-hover:opacity-100'></div>
+              <div className=' group-hover:text-black'>{link.title}</div>
+              </Link>
+            ))
+          }
+        </div>
+        </div>
     </div>
   )
 }

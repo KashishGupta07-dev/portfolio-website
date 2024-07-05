@@ -24,13 +24,13 @@ export const ChatForm = () => {
   }
   return (
     <div id='Contact' className='bg-white w-full h-full mt-3'>
-    <motion.div whileInView={{opacity:1,y:[200,0]}} transition={{duration:0.8,ease:"circOut"}} className='w-4/5 mx-auto flex flex-col items-center pt-16 opacity-0'>
-      <div className=' font-dmsans font-bold text-5xl'>Take A Coffee & Chat With Me</div>
+    <motion.div whileInView={{opacity:1,y:[200,0]}} transition={{duration:0.8,ease:"circOut"}} className=' w-[93%] sm:w-4/5 mx-auto flex flex-col items-center pt-16 opacity-0'>
+      <div className=' font-dmsans font-bold text-3xl sm:text-4xl md:text-5xl text-center'>Take A Coffee & Chat With Me</div>
       <Link to='mailto:kashishgupta_mc25@dtu.ac.in' className='flex flex-row gap-x-3 items-center bg-[#EDF2F8] shadow-sm shadow-[#EDF2F8] py-3 px-6 mt-14 rounded-lg'>
         <RiMailSendFill size={"35px"} className=' text-pink-100'/>
         <div className='font-dmsans font-medium text-sm text-richblack-500'>kashishgupta.y2k5@gmail.com</div>
       </Link>
-      <form className='w-4/6 mx-auto mt-16 flex flex-col gap-y-8 items-center  font-vietnam' onSubmit={handleSubmit(submitHandler)}>
+      <form className=' w-full sm:w-4/6 mx-auto mt-16 flex flex-col gap-y-8 items-center  font-vietnam' onSubmit={handleSubmit(submitHandler)}>
           <div className='flex flex-col w-full'>
           <input type='text' placeholder='Please Enter Your Name....' name='name' className='bg-[#EDF2F8] placeholder:font-inter placeholder:font-normal h-[40px] w-full rounded-lg px-4 py-7 outline-none'
             {

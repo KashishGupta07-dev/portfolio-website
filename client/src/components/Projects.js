@@ -3,21 +3,10 @@ import { TextHighlighter } from './TextHighlighter'
 import { ProjectCard } from './ProjectCard';
 import { motion, useAnimate, useInView } from 'framer-motion'; 
 import { LinkComponent } from './LinkComponent';
-import { getAllProjectsApi } from '../services/operations/project';
-import { useDispatch } from 'react-redux';
-export const Projects = () => {
+export const Projects = ({projects}) => {
     const [selectedCategory,setSelectedCategory] = useState("Mern");
     const [scope,animate] = useAnimate();
     const isInView = useInView(scope);
-    const [projects,setProjects] = useState(null);
-    const dispatch = useDispatch();
-    // eslint-disable-next-line
-    const [loading,setLoading] = useState(false);
-    useEffect(() => {
-        setLoading(true);
-        dispatch(getAllProjectsApi(setProjects, setLoading));
-        // eslint-disable-next-line
-      }, []);
     useEffect(()=>{
         if(isInView){
             animate(scope.current,{
@@ -33,8 +22,8 @@ export const Projects = () => {
     })
   return (
     <div id='Work'  className=' w-full h-full bg-[#EDF2F8]'>
-        <motion.div whileInView={{ opacity:1,y:[80,0]}} transition={{duration:0.65,easings:"cubic-bezier(0.5, 0, 0.75, 0)"}} className='flex flex-col opacity-0 pt-16 w-4/5 mx-auto items-center'>
-        <div className='text-black font-bold font-dmsans leading-relaxed text-5xl'>{"My Creative"} <TextHighlighter text={"Portfolio"}/> {"Section"}</div>
+        <motion.div whileInView={{ opacity:1,y:[80,0]}} transition={{duration:0.65,easings:"cubic-bezier(0.5, 0, 0.75, 0)"}} className='flex flex-col opacity-0 pt-16 w-[93%] sm:w-4/5 mx-auto items-center'>
+        <div className='text-black font-bold font-dmsans leading-relaxed text-3xl sm:text-4xl md:text-5xl text-center'>{"My Creative"} <TextHighlighter text={"Portfolio"}/> {"Section"}</div>
         <div className='flex flex-row gap-x-4 mt-6'>
             {
                 ["Mern","Web","React","All"].map((category,index)=>{

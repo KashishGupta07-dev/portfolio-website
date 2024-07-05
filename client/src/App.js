@@ -1,10 +1,4 @@
 import "./App.css";
-import { NavBar } from "./components/NavBar";
-import { HomePage } from "./components/HomePage";
-import { AboutPage } from "./components/AboutPage";
-import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
-import { ChatForm } from "./components/ChatForm";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/AdminPage/Login";
 import { Otp } from "./components/AdminPage/Otp";
@@ -15,22 +9,14 @@ import { PrivateRoute } from "./AuthRoutes/PrivateRoute";
 import { ProjectDashboard } from "./components/AdminPage/ProjectDashboard";
 import { EditProfile } from "./components/AdminPage/EditProfile";
 import { ContactMessage } from "./components/AdminPage/ContactMessage";
+import { Home } from "./components/Home/Home";
 function App() {
   return (
     <Routes>
       <Route
         path="/"
         element={
-           <div className="overflow-hidden w-full min-h-screen">
-            <NavBar />
-            <HomePage/>
-            <AboutPage />
-            <div>
-              <Projects/>
-              <Skills />
-            </div>
-            <ChatForm />
-          </div>
+          <Home/>
         }
       />
       <Route

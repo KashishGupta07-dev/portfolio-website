@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 export const NavBar = () => {
   return (
     <div className=' fixed w-full backdrop-blur-[4px] py-5 bg-[#F2F5FA] bg-opacity-30 z-[20]'>
-    <div className=' w-3/5 flex flex-row items-center ml-6 justify-between'>
+    <div className=' lg:w-3/5 w-11/12 flex flex-row items-center sm:ml-6 justify-center sm:justify-between'>
         <motion.div whileInView={{ x: [-50, 0] }} transition={{ duration: 0.85, ease: 'easeIn' }} className='flex flex-row items-center relative'>
         <div className='w-[80px] absolute'>
             <img src={NameLogo} alt='NameLogo' className='object-cover'/>
             </div>
             <div className="font-vietnam ml-[3.7rem]">ashish Gupta</div>
         </motion.div>
+        <div className='w-fit hidden sm:block'>
         <div className='flex flex-row gap-x-5'>
           {
             ["Home","About","Work","Skills","Contact"].map((link,index)=>(
@@ -24,6 +25,7 @@ export const NavBar = () => {
               </a>
             ))
           }
+        </div>
         </div>
         </div>
     </div>

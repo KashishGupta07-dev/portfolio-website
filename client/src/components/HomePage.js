@@ -9,10 +9,10 @@ import { LinkComponent } from './LinkComponent'
 export const HomePage = () => {
   return (
     <div id="Home" className='w-full h-full overflow-hidden'>
-        <div className='pt-24 flex flex-row w-4/5 mx-auto'>
+        <div className='pt-24 flex flex-col lg:flex-row w-4/5 mx-auto'>
         {/*Section -1 Hi Hello Part */}
-        <motion.div whileInView={{translateX:[-150,0]}} transition={{ duration: 0.85, ease: 'easeIn' }} className=' flex flex-col items-end w-fit h-fit'>
-        <div className='flex flex-row gap-x-5 items-center pl-5 pr-5 py-7  cursor-default shadow-[0px_0px_10px_8px] shadow-[#E3E8EE] bg-white w-fit rounded-xl'>
+        <motion.div whileInView={{translateX:[-150,0]}} transition={{ duration: 0.85, ease: 'easeIn' }} className=' flex flex-col items-end w-full sm:w-fit h-fit'>
+        <div className='flex flex-row gap-x-5 items-center justify-center sm:justify-start pl-5 pr-5 py-7  cursor-default shadow-[0px_0px_10px_8px] shadow-[#E3E8EE] bg-white w-full sm:w-fit rounded-xl'>
             <div className='text-4xl'>👋</div>
             <div className='flex flex-col font-inter gap-y-3'>
                 <div className=' text-richblack-500 text-xs  '>Hello,I am</div>
@@ -29,17 +29,17 @@ export const HomePage = () => {
             </div>
         </motion.div>
         {/*Section - 2 User Image */}
-        <div className='w-fit ml-10 mt-16 relative flex items-center justify-center'>
+        <div className='w-fit ml-10 mt-16 relative flex items-center justify-center self-end'>
         <motion.img  src={circle}  whileInView={{ scale: [0, 1] }} transition={{ duration: 0.85, ease: "circOut" }} alt='circle' className='w-[350px] h-[350px] '/>
-        <motion.div  whileInView={{ opacity: [0, 1] }} transition={{ duration: 0.5, delayChildren: 0.5 }} className='absolute top-0  w-[400px] h-[400px] z-[10]'>
+        <motion.div  whileInView={{ opacity: [0, 1] }} transition={{ duration: 0.5, delayChildren: 0.5 }} className='absolute top-0 w-[400px] h-[400px] z-[10]'>
             <motion.img whileInView={{ scale: [0, 1] }} transition={{ duration: 1, ease: 'easeInOut' }} src={coderImage} alt='coder' className='object-cover'/>
         </motion.div>
         </div>
             {/*Section - 3 Logos */}
-            <motion.div whileInView={{ scale: [0, 1] }}  transition={{ duration: 2, ease: "circOut" }}   className='flex flex-col items-start justify-between ml-20'>
-                <img  src={expressImg} alt='express' className='p-4 bg-white rounded-full w-[90px] h-[90px] hover:scale-110 transition-transform duration-300  shadow-[0px_0px_10px_8px] shadow-[#E3E8EE]'/>
-                <img  src={reactImg} alt='react' className=' bg-white rounded-full w-[150px] h-[150px] hover:scale-110 transition-transform duration-300  shadow-[0px_0px_10px_8px] shadow-[#E3E8EE] ml-10'/>
-                <img  src={mongoDb} alt='mongodb' className='p-4 bg-white rounded-full w-[90px] h-[90px] hover:scale-110 transition-transform duration-300 shadow-[0px_0px_10px_8px] shadow-[#E3E8EE]'/>
+            <motion.div whileInView={{ scale: [0, 1] }}  transition={{ duration: 2, ease: "circOut" }}   className='flex lg:flex-col items-start gap-x-10 lg:gap-x-0 lg:justify-between ml-0 self-start sm:self-center lg:ml-20 h-full mt-20 lg:mt-0'>
+                <img  src={expressImg} alt='express' className='p-4 bg-white rounded-full w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] hover:scale-110 transition-transform duration-300  shadow-[0px_0px_10px_8px] shadow-[#E3E8EE]'/>
+                <img  src={reactImg} alt='react' className=' bg-white rounded-full w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] hover:scale-110 transition-transform duration-300  shadow-[0px_0px_10px_8px] shadow-[#E3E8EE] lg:ml-10 lg:mt-10'/>
+                <img  src={mongoDb} alt='mongodb' className='p-4 bg-white rounded-full w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] hover:scale-110 transition-transform duration-300 shadow-[0px_0px_10px_8px] shadow-[#E3E8EE] lg:mt-10'/>
             </motion.div>
         </div>
         <LinkComponent/>

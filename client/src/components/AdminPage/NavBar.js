@@ -31,7 +31,8 @@ export const NavBar = () => {
             </div>
             <div className="font-vietnam ml-[3.7rem]">ashish Gupta</div>
         </motion.div>
-        <div className='flex flex-row gap-x-10'>
+        <div className='hidden md:block'>
+        <div className='flex flex-row gap-x-10 '>
           {
             sideLinks.map((link,index)=>(
             <Link
@@ -44,6 +45,7 @@ export const NavBar = () => {
               </Link>
             ))
           }
+        </div>
         </div>
         <button className='bg-yellow-50 flex items-center gap-x-2 px-3 py-2 rounded-lg hover:scale-90 transition-all duration-200' onClick={()=>dispatch(logoutHandler(navigate))}>
         {"Logout"} <CiLogout size={"20px"}/></button>

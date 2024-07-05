@@ -27,10 +27,10 @@ export const Login = () => {
   }
   return (
       <div>
-    <div className='flex flex-row justify-between w-11/12 mx-auto my-auto h-full mt-2 items-start'>
-      <motion.img src={loginImg} whileInView={{x:[-200,0]}} transition={{duration:0.85,ease:"easeIn"}} alt='login' className='w-[45%] h-fit'/>
-      <motion.form whileInView={{x:[200,0]}} transition={{duration:0.85,ease:"easeIn"}} className='w-[45%] mx-auto mt-16 flex flex-col gap-y-8 font-vietnam' onSubmit={handleSubmit(submitHandler)}>
-      <div className='mb-8 text-5xl font-dmsans font-bold'><TextHighlighter text={"Admin"}/> {"Login Page"}</div>
+    <div className='flex flex-col lg:flex-row justify-between w-11/12 mx-auto my-auto h-full mt-2 items-start'>
+      <motion.img src={loginImg} whileInView={{x:[-200,0]}} transition={{duration:0.85,ease:"easeIn"}} alt='login' className=' self-center w-full lg:w-[45%] h-fit max-h-[550px] object-contain'/>
+      <motion.form whileInView={{x:[200,0]}} transition={{duration:0.85,ease:"easeIn"}} className='lg:w-[45%] mx-auto mt-16 flex flex-col gap-y-8 font-vietnam' onSubmit={handleSubmit(submitHandler)}>
+      <div className='mb-8 text-4xl text-center sm:text-5xl font-dmsans font-bold'><TextHighlighter text={"Admin"}/> {"Login Page"}</div>
           <div className='flex flex-col w-full'>
           <div>Email Address: </div>
           <input type="email" placeholder='Please Enter Your Email Address....' name='email'  className='bg-[#EDF2F8] h-[40px] placeholder:font-inter placeholder:font-normal w-full rounded-lg px-4 py-7 outline-none'

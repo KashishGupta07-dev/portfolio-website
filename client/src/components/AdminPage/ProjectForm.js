@@ -99,12 +99,12 @@ export const ProjectForm = ({
       className="fixed w-full min-w-[100vw] min-h-screen left-0 overflow-y-scroll bottom-0 right-0 top-0 h-full bg-opacity-100 backdrop-blur-sm justify-center z-[100] bg-[#F8DADE]"
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
-      <div className="text-5xl font-bold font-dmsans text-center text-black mt-2">
+      <div className="text-4xl sm:text-5xl font-bold font-dmsans text-center lg:w-full text-black mt-2">
         {title}
       </div>
-      <div className="flex flex-row-reverse justify-between">
+      <div className="flex flex-col lg:flex-row-reverse justify-between">
         <form
-          className="w-[45%] mx-auto mt-16 flex flex-col gap-y-4 items-center  font-vietnam"
+          className=" w-[80%] lg;w-[45%] mx-auto mt-16 flex flex-col gap-y-4 items-center  font-vietnam"
           onSubmit={handleSubmit(submitHandler)}
         >
           <div className="flex flex-col w-full">
@@ -237,7 +237,7 @@ export const ProjectForm = ({
         <img
           src={formImage}
           alt="form"
-          className="w-[45%] mb-20 object-cover"
+          className=" hidden lg:block w-[45%] mb-20 object-cover"
         />
       </div>
     </motion.div>
