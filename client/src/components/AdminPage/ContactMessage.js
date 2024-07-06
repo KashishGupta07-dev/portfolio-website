@@ -26,7 +26,7 @@ export const ContactMessage = () => {
     }
   ]
   return (
-    <div className="bg-[#EDF2F8] min-h-screen">
+    <div className="bg-[#EDF2F8] min-h-screen flex flex-col">
       <div className="pt-20 w-5/6 mx-auto">
         <div className="text-2xl sm:text-4xl font-vietnam font-bold text-center">
           Messages Left For Reply :{" "}
@@ -63,7 +63,7 @@ export const ContactMessage = () => {
       </div> : <div className="text-center sm:text-xl font-vietnam flex items-center justify-center mt-40">😀Awesome!! No Messages Left For Reply</div>
        }
       </div>
-      <div className="block md:hidden py-5 mt-5 bg-white bg-opacity-35 backdrop-blur-sm">
+      <div className="block md:hidden py-5 mt-5 bg-white bg-opacity-35 backdrop-blur-sm self-end">
         <div className='flex flex-row gap-x-10 mx-auto justify-center'>
           {
             sideLinks.map((link,index)=>(
