@@ -6,7 +6,7 @@ module.exports = {
       inter: ["Inter", "sans-serif"],
       "edu-sa": ["Edu SA Beginner", "cursive"],
       mono: ["Roboto Mono", "monospace"],
-      vietnam : ["Be Vietnam Pro Medium","cursive"],
+      vietnam : ["Be Vietnam Pro Medium","sans-serif"],
       dmsans : ["DM Sans 14pt Medium","sans-serif"]
     },
     colors: {
