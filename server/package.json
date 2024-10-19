@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --env-file=.env index.js"
+    "dev": "nodemon --env-file=.env index.js",
+    "build-server" : "npm run build",
+    "install-server" : "npm install",
+    "start-server" : "node index.js",
   },
   "keywords": [],
   "author": "",
